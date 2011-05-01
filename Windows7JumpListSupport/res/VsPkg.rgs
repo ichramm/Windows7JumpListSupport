@@ -1,0 +1,51 @@
+%REGHIVE%
+{
+    %REGROOTBEGIN%
+    NoRemove Packages
+    {
+        %CLSID_Package% = s 'Windows7JumpListSupport Package'
+        {
+            val InprocServer32 = s '%MODULE%'
+
+            val CompanyName = s 'ichramm'
+            val ProductName = s 'Windows 7 Jump List Support'
+            val ProductVersion  = s '1.0'
+            val MinEdition  = s 'Standard'
+            val ID  = d '%IDS_PACKAGE_LOAD_KEY%'
+ 
+            SatelliteDll
+            {
+                val DllName = s '%RESOURCE_DLL%'
+                val Path = s '%RESOURCE_PATH%'
+            }
+        }
+    }
+
+    NoRemove Menus
+    {
+        val %CLSID_Package% = s ', 1000, 1'
+    }
+
+
+    NoRemove InstalledProducts
+    {
+        'Windows7JumpListSupport' = s %IDS_OFFICIALNAME%
+        {
+            val Package = s '%CLSID_Package%'
+            val ProductDetails = s %IDS_PRODUCTDETAILS%
+            val LogoID = s '#400'
+            val PID = s '1.0'
+            val UseInterface = d '0'
+        }
+    }
+    
+    NoRemove AutoLoadPackages
+    {
+		NoRemove '{ADFC4E64-0397-11D1-9F4E-00A0C911004F}'
+		{
+			val %CLSID_Package% = d '0'
+		}
+    }
+
+%REGROOTEND%
+}

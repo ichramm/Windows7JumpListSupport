@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CSolutionStore">
+    <Position X="3.75" Y="1" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="CSolutionStore::SolutionItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>SolutionStore.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAEAAABAAAAQAIAAAAAAAAAAAAAAAAAAAAAMAA=</HashCode>
+      <FileName>SolutionStore.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWindows7JumpListSupportPackage">
+    <Position X="5.5" Y="1" Width="5" />
+    <TypeIdentifier>
+      <HashCode>gACAAAAAAAAAAAAQAAAAAQAAAAAAAAAAAAAAAABIAEA=</HashCode>
+      <FileName>Package.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

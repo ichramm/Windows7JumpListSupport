@@ -1,0 +1,40 @@
+﻿// Windows7JumpListSupport.idl : IDL source for Windows7JumpListSupport.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Windows7JumpListSupport.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+midl_pragma warning (disable : 2015)
+import "vsshell.idl";
+midl_pragma warning (default : 2015)
+
+//standard dispids
+#define DISPID_Name                     (-800)
+#define DISPID_Delete                   (-801)
+#define DISPID_Object                   (-802)
+#define DISPID_Parent                   (-803)
+#define DISPID_NewEnum					(-4)
+#define DISPID_Value					(0)
+
+[
+	uuid(0fa2e715-1f0e-4a99-aa43-b574743d452d),
+	version(1.0),
+	helpstring("Windows7JumpListSupport 1.0 Type Library")
+]
+library Windows7JumpListSupportLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	[
+		uuid(a82752e2-f1e0-48ff-adeb-6e7ca1626c21),
+		helpstring("Windows7JumpListSupport Package")
+	]
+	coclass Windows7JumpListSupportPackage
+	{
+		[default] interface IVsPackage;
+	};
+};

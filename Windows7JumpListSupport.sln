@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Windows7JumpListSupport", "Windows7JumpListSupport\Windows7JumpListSupport.vcproj", "{EF50C8B0-9EFE-4D8F-93C8-2C03B67768DA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{064A5ED0-4247-4009-B35C-7D432899C280} = {064A5ED0-4247-4009-B35C-7D432899C280}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Windows7JumpListSupportUI", "Windows7JumpListSupportUi\Windows7JumpListSupportUi.vcproj", "{064A5ED0-4247-4009-B35C-7D432899C280}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{ADD2AE9B-C00F-4C6A-82F2-3E19AAA4C926}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF50C8B0-9EFE-4D8F-93C8-2C03B67768DA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EF50C8B0-9EFE-4D8F-93C8-2C03B67768DA}.Debug|Win32.Build.0 = Debug|Win32
+		{EF50C8B0-9EFE-4D8F-93C8-2C03B67768DA}.Release|Win32.ActiveCfg = Release|Win32
+		{EF50C8B0-9EFE-4D8F-93C8-2C03B67768DA}.Release|Win32.Build.0 = Release|Win32
+		{064A5ED0-4247-4009-B35C-7D432899C280}.Debug|Win32.ActiveCfg = Debug|Win32
+		{064A5ED0-4247-4009-B35C-7D432899C280}.Debug|Win32.Build.0 = Debug|Win32
+		{064A5ED0-4247-4009-B35C-7D432899C280}.Release|Win32.ActiveCfg = Release|Win32
+		{064A5ED0-4247-4009-B35C-7D432899C280}.Release|Win32.Build.0 = Release|Win32
+		{ADD2AE9B-C00F-4C6A-82F2-3E19AAA4C926}.Debug|Win32.ActiveCfg = Debug
+		{ADD2AE9B-C00F-4C6A-82F2-3E19AAA4C926}.Release|Win32.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

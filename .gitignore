@@ -1,0 +1,6 @@
+*.obj
+*.user
+*Debug/
+*Release/
+*.ncb
+*.suo

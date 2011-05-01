@@ -1,0 +1,32 @@
+//If you are generating a package for a Visual Studio Shell Isolated application,
+//  then you can use this file to place the entries for your package that will
+//  be merged into the registry.
+
+[$RootKey$\Packages\{a82752e2-f1e0-48ff-adeb-6e7ca1626c21}]
+@="Windows7JumpListSupport Package"
+"InprocServer32"="$PackageFolder$\Windows7JumpListSupport.dll"
+"CompanyName"="ichramm"
+"ProductName"="Windows 7 Jump List Support"
+"ProductVersion"="1.0"
+"MinEdition"="Standard"
+"ID"=dword:00000001
+
+[$RootKey$\Packages\{a82752e2-f1e0-48ff-adeb-6e7ca1626c21}\SatelliteDll]
+"DllName"="Windows7JumpListSupportUI.dll"
+"Path"="$RootFolder$"
+
+[$RootKey$\Menus]
+"{a82752e2-f1e0-48ff-adeb-6e7ca1626c21}"=", 1000, 1"
+
+[$RootKey$\InstalledProducts\Windows7JumpListSupport]
+@="#100"
+"Package"="{a82752e2-f1e0-48ff-adeb-6e7ca1626c21}"
+"ProductDetails"="#102"
+"LogoID"="#400"
+"PID"="Unknown Product ID"
+"UseInterface"=dword:00000000
+
+
+
+
+
