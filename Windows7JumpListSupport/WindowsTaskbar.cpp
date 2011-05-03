@@ -138,8 +138,7 @@ void CWindowsTaskbar::UpdateJumpList(CSolutionStore &store)
 	hr = jumpList->BeginList(&maxUserItems, IID_IObjectArray, (LPVOID *)&removedItems);
 	if (CHECK_SUCCEEDED(hr, _T("UpdateJumpList - Failed to do BeginList")))
 	{
-		std::vector<IShellLink*>  vectItems;
-		std::vector<IObjectCollection *> vectCollections;
+		std::vector<IUnknown*>  vectObjects;
 
 		TCHAR buffer[MAX_PATH];
 		GetModuleFileName(NULL, buffer, _countof(buffer) - 1);
@@ -149,7 +148,7 @@ void CWindowsTaskbar::UpdateJumpList(CSolutionStore &store)
 		hr = CoCreateInstance(CLSID_EnumerableObjectCollection, NULL, CLSCTX_INPROC_SERVER, IID_IObjectCollection, (LPVOID *)&customCategoryCollection);
 		if (CHECK_SUCCEEDED(hr, _T("UpdateJumpList - Failed to create customCategoryCollection")))
 		{
-			vectCollections.push_back(customCategoryCollection);
+			vectObjects.push_back(customCategoryCollection);
 
 			//GetEnvironmentVariable(_T("CommonProgramFiles"), buffer, _countof(buffer) - 1);
 			//PathAppend(buffer, _T("Microsoft Shared\\MSEnv\\VSLauncher.exe"));
@@ -175,7 +174,7 @@ void CWindowsTaskbar::UpdateJumpList(CSolutionStore &store)
 				if(current)
 				{
 					customCategoryCollection->AddObject(current);
-					vectItems.push_back(current);
+					vectObjects.push_back(current);
 				}
 			}
 			
@@ -193,39 +192,32 @@ void CWindowsTaskbar::UpdateJumpList(CSolutionStore &store)
 		hr = CoCreateInstance(CLSID_EnumerableObjectCollection, NULL, CLSCTX_INPROC_SERVER, IID_IObjectCollection, (LPVOID *)&taskCollection);
 		if (CHECK_SUCCEEDED(hr, _T("UpdateJumpList - Failed to create taskCollection")))
 		{
-			vectCollections.push_back(taskCollection);
+			vectObjects.push_back(taskCollection);
 			for (int j = 0; j < _countof(predefined_tasks); j++)
 			{
 				IShellLink *currentTask = CreateTask(&predefined_tasks[j], (LPCTSTR)moduleFilename);
 				if(currentTask)
 				{
 					taskCollection->AddObject(currentTask);
-					vectItems.push_back(currentTask);
+					vectObjects.push_back(currentTask);
 				}
 			}
-			if(!vectItems.empty())
+
+			IObjectArray *taskArray;
+			hr = taskCollection->QueryInterface(IID_IObjectArray, (LPVOID *)&taskArray);
+			if (CHECK_SUCCEEDED(hr, _T("UpdateJumpList - Failed to QueryInterface IObjectArray on taskCollection")))
 			{
-				IObjectArray *taskArray;
-				hr = taskCollection->QueryInterface(IID_IObjectArray, (LPVOID *)&taskArray);
-				if (CHECK_SUCCEEDED(hr, _T("UpdateJumpList - Failed to QueryInterface IObjectArray on taskCollection")))
-				{
-					jumpList->AddUserTasks(taskArray);
-					taskArray->Release();
-				}
+				jumpList->AddUserTasks(taskArray);
+				taskArray->Release();
 			}
 		}
 
 		// commit the changes
 		jumpList->CommitList();
 
-		// release tasks
-		for ( ; !vectItems.empty(); vectItems.pop_back()) {
-			vectItems.back()->Release();
-		}
-
-		// release collections
-		for ( ; !vectCollections.empty(); vectCollections.pop_back()) {
-			vectCollections.back()->Release();
+		// release all COM objects (shell links + collections)
+		for ( ; !vectObjects.empty(); vectObjects.pop_back()) {
+			vectObjects.back()->Release();
 		}
 
 		removedItems->Release();
