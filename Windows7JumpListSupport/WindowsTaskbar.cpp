@@ -29,7 +29,7 @@ static const PROPERTYKEY PKEY_Title = { GUID_PKEY_Title , 2};
 static __forceinline bool CHECK_SUCCEEDED(HRESULT hr, const TCHAR *errMsg)
 {
 	bool ret = SUCCEEDED(hr);
-	if(ret)
+	if(!ret)
 	{
 		OutputDebugString(errMsg);
 	}
