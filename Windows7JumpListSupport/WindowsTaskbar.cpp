@@ -169,7 +169,14 @@ void CWindowsTaskbar::UpdateJumpList(CSolutionStore &store)
 				}
 				
 				CString fileName = filePath.Mid(filePath.ReverseFind(_T('\\'))+1);
-				TaskDescription task = { (LPCTSTR)fileName, NULL, (LPCTSTR)filePath, (LPCTSTR)filePath, NULL, 3 };
+				CString safeFilePath = filePath;
+				if (safeFilePath.Find(_T(' '), 1) > 0)
+				{
+					safeFilePath.Insert(0, _T("\""));
+					safeFilePath.Append(_T("\""));
+				}
+
+				TaskDescription task = { (LPCTSTR)fileName, NULL, (LPCTSTR)safeFilePath, (LPCTSTR)filePath, NULL, 3 };
 				IShellLink *current = CreateTask(&task, (LPCTSTR)moduleFilename);
 				if(current)
 				{

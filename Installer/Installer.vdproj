@@ -21,20 +21,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2715DA52E2D54517B28EC178AC7A4679"
+        "OwnerKey" = "8:_40C35C057C50449893C4ADF9102D74E4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_40C35C057C50449893C4ADF9102D74E4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_4E4FF479D5254CE9AE0BB51E6695568E"
-        "OwnerKey" = "8:_40C35C057C50449893C4ADF9102D74E4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AFF4A31002114F9A902ACE2FB1546986"
-        "OwnerKey" = "8:_4E4FF479D5254CE9AE0BB51E6695568E"
+        "MsmKey" = "8:_A1BE72EBAF1B43B1AFD203285D3F660E"
+        "OwnerKey" = "8:_2715DA52E2D54517B28EC178AC7A4679"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -239,14 +239,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Windows 7 Jump List Support for Visual Studio 2008"
-        "ProductCode" = "8:{BAA1954F-0182-45B7-9911-A91AED9580B3}"
-        "PackageCode" = "8:{12478CDB-6692-4405-BE52-F8B4A92F38DE}"
+        "ProductCode" = "8:{B46026F2-D06A-46C6-B35D-04DCC1CF599C}"
+        "PackageCode" = "8:{E544350E-1D8F-4525-976C-FAD9DE4D427D}"
         "UpgradeCode" = "8:{0B477F06-A8A0-46B0-A330-47DDC636D9C9}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0"
+        "ProductVersion" = "8:1.1"
         "Manufacturer" = "8:ichramm"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1031,7 +1031,7 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_4E4FF479D5254CE9AE0BB51E6695568E"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_2715DA52E2D54517B28EC178AC7A4679"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
@@ -1045,7 +1045,7 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_AFF4A31002114F9A902ACE2FB1546986"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_A1BE72EBAF1B43B1AFD203285D3F660E"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
