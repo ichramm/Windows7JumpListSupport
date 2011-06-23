@@ -9,7 +9,7 @@
 
             val CompanyName = s 'ichramm'
             val ProductName = s 'Windows 7 Jump List Support'
-            val ProductVersion  = s '1.0'
+            val ProductVersion  = s '1.1.1'
             val MinEdition  = s 'Standard'
             val ID  = d '%IDS_PACKAGE_LOAD_KEY%'
  

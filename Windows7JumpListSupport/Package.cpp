@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2011 by Juan Ramirez (@ichramm) - jramirez@inconcertcc.com
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 #include "stdafx.h"
 #include "Package.h"
 #include "WindowsTaskbar.h"
@@ -86,12 +107,7 @@ CWindows7JumpListSupportPackage::OnBeforeUnloadProject(__RPC__in_opt IVsHierarch
 STDMETHODIMP 
 CWindows7JumpListSupportPackage::OnAfterOpenSolution(__RPC__in_opt IUnknown *pUnkReserved, BOOL fNewSolution)
 {
-	BSTR dir, file, optsFile;
-	m_solution->GetSolutionInfo(&dir, &file, &optsFile);
-
-	m_store.StoreSolution((const TCHAR *)file);
-	CWindowsTaskbar::UpdateJumpList(m_store);
-
+	HandleSolutionEvent();
 	return S_OK;
 }
 
@@ -109,7 +125,8 @@ CWindows7JumpListSupportPackage::OnBeforeCloseSolution(__RPC__in_opt IUnknown *p
 
 STDMETHODIMP 
 CWindows7JumpListSupportPackage::OnAfterCloseSolution(__RPC__in_opt IUnknown *pUnkReserved)
-{
+{ // handle solution that weren't saved yet (so they don't have a filename before this event is called)
+	HandleSolutionEvent();
 	return S_OK;
 }
 
@@ -136,5 +153,18 @@ void CWindows7JumpListSupportPackage::OnMyCommand(CommandHandler* pSender, DWORD
 		0,
 		&lResult);
 	VSL_CHECKHRESULT(hr);
+}
+
+void CWindows7JumpListSupportPackage::HandleSolutionEvent()
+{
+	BSTR dir, file, optsFile;
+	m_solution->GetSolutionInfo(&dir, &file, &optsFile);
+
+	if(0 != m_lastSolution.CompareNoCase(file))
+	{
+		m_lastSolution = file;
+		m_store.StoreSolution(m_lastSolution);
+		CWindowsTaskbar::UpdateJumpList(m_store);
+	}
 }
 
