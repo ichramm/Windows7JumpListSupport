@@ -21,20 +21,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2CAEA6C590AD49E08EF2F879FC905CE7"
+        "OwnerKey" = "8:_40C35C057C50449893C4ADF9102D74E4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_40C35C057C50449893C4ADF9102D74E4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8680F14021274B77897E2A87B282BA72"
-        "OwnerKey" = "8:_D9D1A55718DE4DECAE832A640B8C1AC7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D9D1A55718DE4DECAE832A640B8C1AC7"
-        "OwnerKey" = "8:_40C35C057C50449893C4ADF9102D74E4"
+        "MsmKey" = "8:_66683225FD3B4DDBA25EC0871A8925FA"
+        "OwnerKey" = "8:_2CAEA6C590AD49E08EF2F879FC905CE7"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -239,14 +239,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Windows 7 Jump List Support for Visual Studio 2008"
-        "ProductCode" = "8:{11AF66D7-9235-4A76-986F-CEDDA4E98028}"
-        "PackageCode" = "8:{144DE8DB-62F5-4A9F-B407-31394C5C848D}"
+        "ProductCode" = "8:{24936CCE-D7D2-4C7C-A3BB-F49FCBDC4AF8}"
+        "PackageCode" = "8:{DDE61BA8-6C0B-4583-B1BB-BBF9A8E341D0}"
         "UpgradeCode" = "8:{0B477F06-A8A0-46B0-A330-47DDC636D9C9}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.1"
+        "ProductVersion" = "8:1.1.2"
         "Manufacturer" = "8:ichramm"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -432,7 +432,7 @@
                                                                     "Condition" = "8:"
                                                                     "Transitive" = "11:FALSE"
                                                                     "ValueTypes" = "3:1"
-                                                                    "Value" = "8:1.1.1"
+                                                                    "Value" = "8:1.0"
                                                                     }
                                                                     "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_A03AF45ADAC24EAF9E24FA0C844ED9C5"
                                                                     {
@@ -1031,11 +1031,11 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_8680F14021274B77897E2A87B282BA72"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_2CAEA6C590AD49E08EF2F879FC905CE7"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:microsoft_vc90_crt_x86.msm"
+            "SourcePath" = "8:policy_9_0_Microsoft_VC90_CRT_x86.msm"
                 "Properties"
                 {
                 }
@@ -1045,11 +1045,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_D9D1A55718DE4DECAE832A640B8C1AC7"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_66683225FD3B4DDBA25EC0871A8925FA"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:policy_9_0_Microsoft_VC90_CRT_x86.msm"
+            "SourcePath" = "8:microsoft_vc90_crt_x86.msm"
                 "Properties"
                 {
                 }
@@ -1064,7 +1064,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_21AD99D5471E4BC192A2175F290B5188"
             {
-            "SourcePath" = "8:..\\Windows7JumpListSupport\\Debug\\1033\\Windows7JumpListSupportUI.dll"
+            "SourcePath" = "8:..\\Windows7JumpListSupport\\Release\\1033\\Windows7JumpListSupportUI.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A8D698EFF2F74BD7B19B53991D5B3946"
@@ -1092,7 +1092,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_40C35C057C50449893C4ADF9102D74E4"
             {
-            "SourcePath" = "8:..\\Windows7JumpListSupport\\Debug\\Windows7JumpListSupport.dll"
+            "SourcePath" = "8:..\\Windows7JumpListSupport\\Release\\Windows7JumpListSupport.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F432285BEFA1453AAB79E23DC76A3521"
