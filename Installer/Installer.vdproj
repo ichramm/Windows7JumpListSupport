@@ -21,20 +21,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2CAEA6C590AD49E08EF2F879FC905CE7"
-        "OwnerKey" = "8:_40C35C057C50449893C4ADF9102D74E4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_40C35C057C50449893C4ADF9102D74E4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_66683225FD3B4DDBA25EC0871A8925FA"
-        "OwnerKey" = "8:_2CAEA6C590AD49E08EF2F879FC905CE7"
+        "MsmKey" = "8:_5F8F53275C474A3C98907DA6142E93C4"
+        "OwnerKey" = "8:_CE3A93659D634169BCC116B483B52271"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CE3A93659D634169BCC116B483B52271"
+        "OwnerKey" = "8:_40C35C057C50449893C4ADF9102D74E4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -239,14 +239,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Windows 7 Jump List Support for Visual Studio 2008"
-        "ProductCode" = "8:{24936CCE-D7D2-4C7C-A3BB-F49FCBDC4AF8}"
-        "PackageCode" = "8:{DDE61BA8-6C0B-4583-B1BB-BBF9A8E341D0}"
+        "ProductCode" = "8:{FC90313C-99E9-4114-A00A-4DA6E1F29CAD}"
+        "PackageCode" = "8:{1FCD4669-719C-424D-95D9-14DF60908BC3}"
         "UpgradeCode" = "8:{0B477F06-A8A0-46B0-A330-47DDC636D9C9}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.2"
+        "ProductVersion" = "8:1.1.3"
         "Manufacturer" = "8:ichramm"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1031,11 +1031,11 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_2CAEA6C590AD49E08EF2F879FC905CE7"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_5F8F53275C474A3C98907DA6142E93C4"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:policy_9_0_Microsoft_VC90_CRT_x86.msm"
+            "SourcePath" = "8:microsoft_vc90_crt_x86.msm"
                 "Properties"
                 {
                 }
@@ -1045,11 +1045,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_66683225FD3B4DDBA25EC0871A8925FA"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_CE3A93659D634169BCC116B483B52271"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:microsoft_vc90_crt_x86.msm"
+            "SourcePath" = "8:policy_9_0_Microsoft_VC90_CRT_x86.msm"
                 "Properties"
                 {
                 }

@@ -183,22 +183,23 @@ void CWindowsTaskbar::UpdateJumpList(CSolutionStore &store)
 				const CString &filePath = solutions[counter];
 
 				if (GetFileAttributes((LPCTSTR)filePath) == INVALID_FILE_ATTRIBUTES)
-				{ // if the solution file does not exist forget about it
+				{
 					store.RemoveSolution(filePath);
 					solutions.erase(solutions.begin() + counter-- );
 					continue;
 				}
 				
-				CString fileName = filePath.Mid(filePath.ReverseFind(_T('\\'))+1);
-				CString safeFilePath = filePath;
-				if (safeFilePath.Find(_T(' '), 1) > 0)
-				{
-					safeFilePath.Insert(0, _T("\""));
-					safeFilePath.Append(_T("\""));
-				}
+				int slashPos = filePath.ReverseFind(_T('\\'));
+				
+				CString fileName = filePath.Mid(slashPos+1);
+				CString safeFilePath = _T("\"") + filePath + _T("\"");
 
-				TaskDescription task = { (LPCTSTR)fileName, NULL, (LPCTSTR)safeFilePath, (LPCTSTR)filePath, NULL, 3 };
+				CString desc = fileName.Mid(0, fileName.ReverseFind(_T('.')));
+				desc += _T(" (") + filePath.Mid(0, slashPos) + _T(")");
+
+				TaskDescription task = { (LPCTSTR)fileName, NULL, (LPCTSTR)safeFilePath, (LPCTSTR)desc, NULL, 3 };
 				IShellLink *current = CreateTask(&task, (LPCTSTR)moduleFilename);
+				
 				if(current)
 				{
 					customCategoryCollection->AddObject(current);
